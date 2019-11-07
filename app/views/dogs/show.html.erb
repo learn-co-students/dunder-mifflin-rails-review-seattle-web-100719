@@ -1,0 +1,10 @@
+<h1>THIS IS YOUR DOG!!!!!</h1>
+
+<h3>Dog Name: <%=@dog.name%></h3>
+<h3>Dog Breed: <%=@dog.breed%></h3>
+<h3>Dog Age: <%=@dog.age%></h3>
+<h3>Employee owners: </h3>
+<% @dog.employees.each do |employee|%>
+<%="#{employee.first_name} #{employee.last_name}"%><br>
+<%end%>
+
