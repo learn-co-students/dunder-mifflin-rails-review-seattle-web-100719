@@ -1,0 +1,5 @@
+<% @dogs.each do |dog| %>
+<p><%= link_to dog.name, dog %></p>
+<% end %>
+
+<%= link_to "Sort These Guys", dogs_sort_path %>
