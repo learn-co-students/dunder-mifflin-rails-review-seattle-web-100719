@@ -1,0 +1,14 @@
+<h1>Dogs</h1>
+<ul>
+<% @dogs.each do |dog| %>
+    <li><%= link_to dog.name, dog_path(dog) %></li>
+<% end %>
+
+<h1>Dogs Sorted By Number Of Owners</h1>
+<% hash = Employee.group(:dog_id).count(:dog_id) %> <br>
+<% sorted = hash.sort_by {|key, value| value}.reverse %> <br>
+<% sorted.each do |e, i| %>
+    <% dog = Dog.find(e) %>
+    <li><%= link_to dog.name + " has #{i} owners.", dog_path(dog) %></li>
+<% end %>
+</ul>
